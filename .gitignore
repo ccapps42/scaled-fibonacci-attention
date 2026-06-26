@@ -13,6 +13,10 @@ __pycache__/
 # Claude Code project dir
 .claude/
 
+# Internal design notes — kept locally, not published
+fibonacci-attention-spec.md
+fibonacci-attention-concept.md
+
 # LaTeX build artifacts (keep .tex, .bib, .pdf)
 paper/*.aux
 paper/*.log
