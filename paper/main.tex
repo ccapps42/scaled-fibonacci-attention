@@ -267,10 +267,31 @@ distances reachable anywhere in the stack equals one layer's offsets (about 19
 distinct distances beyond the window at sequence length 1024). A linear $\alpha$
 ramp gives each layer a different scaled copy of the same rungs, raising the
 union of reachable distances by roughly $4\times$ (to about 75) at the same
-per-layer sparsity and the same attention FLOPs. The nominal coverage understates
-the true receptive field further, because the dense local window low-pass-smooths
-each rung into a band and multi-hop composition fills sums of rungs across
-layers; the union figure is a conservative lower bound.
+per-layer sparsity and the same attention FLOPs.
+
+This count of distinct distances still understates the receptive field, because
+the rungs are not point samples. The dense local window of width $W$ acts as a
+smoothing kernel at every layer: within a few layers each token's representation
+already aggregates its $\pm W$ neighbors, and the blur compounds with depth. A
+rung read at distance $d_k=\alpha f_k$ therefore returns a soft band of half-width
+on the order of $W$ centered on $d_k$, not a single position. Consecutive
+Fibonacci rungs are separated by $f_{k+1}-f_k=f_{k-1}$, so whenever that spacing
+falls below about $2W$ the bands of neighboring rungs overlap and the apparent gap
+between them is not a real hole. This is automatic at short range, where the rungs
+are dense ($1,2,3,5,8,\dots$); the spacing only exceeds $2W$ far out (for example
+$610\to987$), where the precise offset matters least. Staggering reinforces the
+effect: because each layer scales the same nominal rung to a different absolute
+distance, the union over layers places several bands in an interval that any
+single layer would leave empty, and multi-hop composition adds the sums
+$d_a+d_b$ of rungs used in successive layers. The distinct-distance count is thus
+a conservative lower bound on coverage.
+
+This argument explains why the scheme has no functional gaps, not where its
+measured advantage comes from. The position-resolved analysis in
+Section~\ref{sec:negatives} shows the staggering gain is uniform across context
+positions rather than concentrated at long range, so the widened receptive field
+is better read as evidence that staggering sacrifices no coverage than as the
+source of the perplexity improvement.
 
 \subsection{Learning the scalar is inert}
 
