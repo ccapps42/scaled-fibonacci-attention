@@ -48,9 +48,10 @@ all sparse variants extrapolate to four times their training length with little
 or no degradation, whereas a recipe-matched dense baseline collapses
 (perplexity rises by 201\% at 4$\times$ length); we attribute this to
 fixed-offset attention only ever querying relative positions seen during
-training. We also report two honest negatives: at training length the sparse
-models trail dense by about 26\%, and the staggering gain is uniform across
-context positions rather than concentrated at long range.
+training. We also report two honest negatives: at training length the best sparse
+model has about 26\% higher perplexity than the dense baseline, and the
+staggering gain is uniform across context positions rather than concentrated at
+long range.
 \end{abstract}
 
 \section{Introduction}
