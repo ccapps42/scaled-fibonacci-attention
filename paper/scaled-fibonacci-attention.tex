@@ -299,14 +299,73 @@ is better read as evidence that staggering sacrifices no coverage than as the
 source of the perplexity improvement.
 
 \subsection{Learning the scalar is inert}
+\label{sec:inert}
 
 The learned schedule improves over fixed (Table~\ref{tab:matrix}) but never
 reaches the static stagger, and it does so at roughly $5\times$ the inference
 latency because the non-integer offsets require the unfused gather. The learned
-$\alpha$ values stay close to their initialization. The mechanism we set out to
+$\alpha$ values stay close to their initialization, which a controlled retrieval
+probe (Section~\ref{sec:probe}) confirms directly. The mechanism we set out to
 study, a trainable spring, is therefore dominated by a fixed schedule we
 imposed by hand. We read this as evidence that the benefit is structural (diverse
 per-layer spacing) rather than something gradient descent needs to discover.
+
+\subsection{Mechanistic probe: the scalar does not move}
+\label{sec:probe}
+
+To test the inertness directly, away from language modeling, we use a controlled
+retrieval task. Each sequence plants a key--value pair at a chosen offset $d$ from
+the query, with distractor pairs elsewhere so the model must perform genuine
+distance-dependent retrieval rather than copy the only value present. A marked
+variant asks a single model to serve two distances at once ($d\in\{200,350\}$), so
+the per-layer scalars would have to specialize to cover both. We train small models
+at depths $2$, $4$, and $8$ with the spacing scalar free to learn, under two
+initializations: uniform ($\alpha=1$ in every layer) and the staggered ramp.
+Table~\ref{tab:probe} reports the learned scalars and the retrieval accuracy.
+
+Two results follow. First, the free scalar barely moves from its initialization at
+any depth: the uniform start stays within $0.05$ of $\alpha=1$, and the staggered
+start stays spread across roughly $[0.55,1.45]$. Gradient descent does not
+relocate the scalars even on a task that would directly reward it, which confirms
+the language-model observation of Section~\ref{sec:inert} in a setting where the
+useful spacing is unambiguous. Second, the initialization decides whether the
+model retrieves at all: with the uniform start it retrieves nothing at depth $4$
+and beyond ($0.00$ at both distances), while the staggered start restores retrieval
+at depths 2 and 4.
+
+We take this as direct support for two claims of this paper: the per-layer scalar
+is inert under learning, and the static staggered \emph{structure}, not adaptation,
+is what carries the benefit. The probe does not support a stronger union-coverage
+claim. Even when it retrieves, the staggered model tends to specialize to one
+distance (high at $200$, near zero at $350$), and at depth $8$ the task is
+unsolved. This synthetic task isolates the inertness cleanly but demands more of
+coverage than language modeling does; the coverage argument therefore rests on the
+distinct-distance count of Section~\ref{sec:ablation}, not on this probe.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{llccc}
+\toprule
+depth & init & learned $\alpha$ range & acc@$200$ & acc@$350$ \\
+\midrule
+2 & uniform   & $0.93$--$1.03$ & 0.38 & 0.23 \\
+2 & staggered & $0.56$--$1.39$ & 0.99 & 0.00 \\
+\addlinespace
+4 & uniform   & $0.96$--$1.01$ & 0.00 & 0.00 \\
+4 & staggered & $0.55$--$1.45$ & 0.88 & 0.17 \\
+\addlinespace
+8 & uniform   & $0.97$--$1.02$ & 0.00 & 0.00 \\
+8 & staggered & $0.55$--$1.45$ & 0.04 & 0.00 \\
+\bottomrule
+\end{tabular}
+\caption{Controlled retrieval probe (marked two-distance copy, $d\in\{200,350\}$),
+mean over two seeds. A spacing scalar left free to learn stays near its
+initialization at every depth. The uniform start collapses to no retrieval at depth
+$\ge 4$; the staggered start restores it at depths 2 and 4, though it specializes
+to one distance and the task is unsolved at depth 8.}
+\label{tab:probe}
+\end{table}
 
 \subsection{Length extrapolation: sparse is robust, dense collapses}
 \label{sec:extrap}
