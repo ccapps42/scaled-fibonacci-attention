@@ -1,0 +1,23 @@
+# Large training artifacts (checkpoints) — never commit (41 GB)
+experiments/
+
+# Tokenized corpora / checkpoints (live outside the repo)
+*.bin
+*.pt
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Claude Code project dir
+.claude/
+
+# LaTeX build artifacts (keep .tex, .bib, .pdf)
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.blg
+paper/*.bbl
+paper/_*.log
+*.synctex.gz

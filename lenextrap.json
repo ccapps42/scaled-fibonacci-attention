@@ -1,0 +1,310 @@
+{
+  "f09__logsparse_w8": {
+    "1024": {
+      "fineweb_edu_val": 44.7785,
+      "wikipedia_val": 40.8876
+    },
+    "2048": {
+      "fineweb_edu_val": 44.9833,
+      "wikipedia_val": 41.0098
+    },
+    "4096": {
+      "fineweb_edu_val": 49.8579,
+      "wikipedia_val": 45.6077
+    }
+  },
+  "f18__logsparse_stagger_w6": {
+    "1024": {
+      "fineweb_edu_val": 44.111,
+      "wikipedia_val": 39.8856
+    },
+    "2048": {
+      "fineweb_edu_val": 43.8801,
+      "wikipedia_val": 39.6369
+    },
+    "4096": {
+      "fineweb_edu_val": 44.0982,
+      "wikipedia_val": 39.8652
+    }
+  },
+  "f19__logsparse_stagger_w8": {
+    "1024": {
+      "fineweb_edu_val": 43.6019,
+      "wikipedia_val": 39.563
+    },
+    "2048": {
+      "fineweb_edu_val": 43.3203,
+      "wikipedia_val": 39.2333
+    },
+    "4096": {
+      "fineweb_edu_val": 43.4343,
+      "wikipedia_val": 39.3256
+    }
+  },
+  "f20__logsparse_stagger_w10": {
+    "1024": {
+      "fineweb_edu_val": 43.1719,
+      "wikipedia_val": 39.0483
+    },
+    "2048": {
+      "fineweb_edu_val": 42.8856,
+      "wikipedia_val": 38.7236
+    },
+    "4096": {
+      "fineweb_edu_val": 43.0236,
+      "wikipedia_val": 38.8289
+    }
+  },
+  "f21__logsparse_stagger_w12": {
+    "1024": {
+      "fineweb_edu_val": 42.6898,
+      "wikipedia_val": 38.5145
+    },
+    "2048": {
+      "fineweb_edu_val": 42.4029,
+      "wikipedia_val": 38.174
+    },
+    "4096": {
+      "fineweb_edu_val": 42.6224,
+      "wikipedia_val": 38.347
+    }
+  },
+  "f05__fib_fixed_w6": {
+    "1024": {
+      "fineweb_edu_val": 44.35,
+      "wikipedia_val": 40.2429
+    },
+    "2048": {
+      "fineweb_edu_val": 44.0051,
+      "wikipedia_val": 39.8755
+    },
+    "4096": {
+      "fineweb_edu_val": 43.827,
+      "wikipedia_val": 39.6804
+    }
+  },
+  "f06__fib_fixed_w8": {
+    "1024": {
+      "fineweb_edu_val": 44.0762,
+      "wikipedia_val": 40.0215
+    },
+    "2048": {
+      "fineweb_edu_val": 43.7402,
+      "wikipedia_val": 39.6526
+    },
+    "4096": {
+      "fineweb_edu_val": 43.565,
+      "wikipedia_val": 39.4656
+    }
+  },
+  "f07__fib_fixed_w10": {
+    "1024": {
+      "fineweb_edu_val": 43.4802,
+      "wikipedia_val": 39.3348
+    },
+    "2048": {
+      "fineweb_edu_val": 43.1434,
+      "wikipedia_val": 38.9566
+    },
+    "4096": {
+      "fineweb_edu_val": 42.9674,
+      "wikipedia_val": 38.7772
+    }
+  },
+  "f08__fib_fixed_w12": {
+    "1024": {
+      "fineweb_edu_val": 43.1183,
+      "wikipedia_val": 39.0499
+    },
+    "2048": {
+      "fineweb_edu_val": 42.7835,
+      "wikipedia_val": 38.6694
+    },
+    "4096": {
+      "fineweb_edu_val": 42.6026,
+      "wikipedia_val": 38.4868
+    }
+  },
+  "f01__fib_learned_w6": {
+    "1024": {
+      "fineweb_edu_val": 43.8609,
+      "wikipedia_val": 39.6218
+    },
+    "2048": {
+      "fineweb_edu_val": 43.5075,
+      "wikipedia_val": 39.2419
+    },
+    "4096": {
+      "fineweb_edu_val": 43.3201,
+      "wikipedia_val": 39.0463
+    }
+  },
+  "f02__fib_learned_w8": {
+    "1024": {
+      "fineweb_edu_val": 43.7006,
+      "wikipedia_val": 39.4274
+    },
+    "2048": {
+      "fineweb_edu_val": 43.3409,
+      "wikipedia_val": 39.0366
+    },
+    "4096": {
+      "fineweb_edu_val": 43.15,
+      "wikipedia_val": 38.8416
+    }
+  },
+  "f03__fib_learned_w10": {
+    "1024": {
+      "fineweb_edu_val": 42.9898,
+      "wikipedia_val": 38.8002
+    },
+    "2048": {
+      "fineweb_edu_val": 42.6292,
+      "wikipedia_val": 38.405
+    },
+    "4096": {
+      "fineweb_edu_val": 42.4412,
+      "wikipedia_val": 38.2133
+    }
+  },
+  "f04__fib_learned_w12": {
+    "1024": {
+      "fineweb_edu_val": 42.8508,
+      "wikipedia_val": 38.6027
+    },
+    "2048": {
+      "fineweb_edu_val": 42.4911,
+      "wikipedia_val": 38.2084
+    },
+    "4096": {
+      "fineweb_edu_val": 42.2975,
+      "wikipedia_val": 38.0162
+    }
+  },
+  "f10__fib_stagger_w6": {
+    "1024": {
+      "fineweb_edu_val": 42.9331,
+      "wikipedia_val": 38.5852
+    },
+    "2048": {
+      "fineweb_edu_val": 42.5487,
+      "wikipedia_val": 38.1806
+    },
+    "4096": {
+      "fineweb_edu_val": 42.3523,
+      "wikipedia_val": 37.9867
+    }
+  },
+  "f11__fib_stagger_w8": {
+    "1024": {
+      "fineweb_edu_val": 42.5317,
+      "wikipedia_val": 38.071
+    },
+    "2048": {
+      "fineweb_edu_val": 42.1705,
+      "wikipedia_val": 37.6784
+    },
+    "4096": {
+      "fineweb_edu_val": 41.9808,
+      "wikipedia_val": 37.4831
+    }
+  },
+  "f12__fib_stagger_w10": {
+    "1024": {
+      "fineweb_edu_val": 42.2124,
+      "wikipedia_val": 37.8815
+    },
+    "2048": {
+      "fineweb_edu_val": 41.8481,
+      "wikipedia_val": 37.4742
+    },
+    "4096": {
+      "fineweb_edu_val": 41.6581,
+      "wikipedia_val": 37.277
+    }
+  },
+  "f13__fib_stagger_w12": {
+    "1024": {
+      "fineweb_edu_val": 42.0174,
+      "wikipedia_val": 37.5949
+    },
+    "2048": {
+      "fineweb_edu_val": 41.6529,
+      "wikipedia_val": 37.1967
+    },
+    "4096": {
+      "fineweb_edu_val": 41.4539,
+      "wikipedia_val": 37.0021
+    }
+  },
+  "f14__fib_hdc_w6": {
+    "1024": {
+      "fineweb_edu_val": 43.1038,
+      "wikipedia_val": 38.6997
+    },
+    "2048": {
+      "fineweb_edu_val": 43.8957,
+      "wikipedia_val": 39.36
+    },
+    "4096": {
+      "fineweb_edu_val": 44.9338,
+      "wikipedia_val": 40.2528
+    }
+  },
+  "f15__fib_hdc_w8": {
+    "1024": {
+      "fineweb_edu_val": 42.5786,
+      "wikipedia_val": 38.268
+    },
+    "2048": {
+      "fineweb_edu_val": 42.7289,
+      "wikipedia_val": 38.3844
+    },
+    "4096": {
+      "fineweb_edu_val": 43.0986,
+      "wikipedia_val": 38.7514
+    }
+  },
+  "f16__fib_hdc_w10": {
+    "1024": {
+      "fineweb_edu_val": 42.2767,
+      "wikipedia_val": 38.0028
+    },
+    "2048": {
+      "fineweb_edu_val": 42.5851,
+      "wikipedia_val": 38.2027
+    },
+    "4096": {
+      "fineweb_edu_val": 43.1385,
+      "wikipedia_val": 38.6709
+    }
+  },
+  "f17__fib_hdc_w12": {
+    "1024": {
+      "fineweb_edu_val": 42.0855,
+      "wikipedia_val": 37.7505
+    },
+    "2048": {
+      "fineweb_edu_val": 42.5335,
+      "wikipedia_val": 38.1383
+    },
+    "4096": {
+      "fineweb_edu_val": 43.2508,
+      "wikipedia_val": 38.8022
+    }
+  },
+  "ref_e0000": {
+    "1024": {
+      "fineweb_edu_val": 33.3685,
+      "wikipedia_val": 27.283
+    },
+    "2048": {
+      "fineweb_edu_val": 49.1454,
+      "wikipedia_val": 41.4195
+    },
+    "4096": {
+      "fineweb_edu_val": 100.3597,
+      "wikipedia_val": 89.1891
+    }
+  }
+}
