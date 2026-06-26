@@ -12,7 +12,7 @@ Three code paths (all validated to agree by smoke_test.py):
 
 make_factories() dispatches: alpha_mode="fixed" -> bool-mask (B); "learned" -> stream (C).
 
-See ../fibonacci-attention-spec.md. Imports _apply_rope from baseline.py in this directory.
+Imports _apply_rope from baseline.py in this directory.
 
 Interpolation bracket: lo=floor(target), hi=lo+1, frac=target-lo, further index
 CLAMPED to >=0. Keeps grad-to-theta alive even at integer alpha (floor/ceil would

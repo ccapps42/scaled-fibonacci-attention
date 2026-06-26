@@ -28,7 +28,6 @@ code/        training, evaluation, and analysis scripts
 paper/       LaTeX source (main.tex, references.bib) and the compiled PDF
 db/fib.db    SQLite database with all training and evaluation results
 *.json       position-resolved loss (posloss) and length-extrapolation (lenextrap) dumps
-*.md         design notes (concept, spec)
 ```
 
 `code/` includes the shared training stack (`baseline.py`, `train.py`, `db.py`,
