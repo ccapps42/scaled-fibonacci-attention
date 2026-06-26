@@ -172,9 +172,11 @@ TinyStories \citep{eldan2023tinystories}, and $23\%$ mathematics (the MATH datas
 four held-out sets: FineWeb-Edu, Wikipedia, TinyStories, and a math set held out
 from OpenMathInstruct-2 (problem--solution pairs, a disjoint shard from the
 training math).
-We additionally report two synthetic multi-hop reasoning tasks (RULER variable
-tracking \citep{hsieh2024ruler} and LEGO \citep{zhang2022lego}) and an
-analytic FLOPs/throughput breakdown. The sparse models add only the $\theta$
+We additionally log a battery of auxiliary evaluations (two synthetic multi-hop
+reasoning tasks, RULER variable tracking \citep{hsieh2024ruler} and LEGO
+\citep{zhang2022lego}, plus a set of cheap probes carried over from the training
+harness) and an analytic FLOPs/throughput breakdown. At this scale the battery is
+uniformly capacity-limited (Section~\ref{sec:negatives}). The sparse models add only the $\theta$
 scalars over dense, so the comparison to \textsc{dense} is essentially
 parameter-matched.
 
@@ -396,12 +398,22 @@ at long range.}
 \label{tab:posloss}
 \end{table}
 
-\paragraph{Reasoning evaluations are at chance.}
-The two synthetic multi-hop tasks (RULER variable tracking, LEGO) score at or
-near chance for every model, including the dense baseline. At 60M parameters these
-tasks are capacity-limited, so they do not discriminate among attention patterns
-here; we report them for completeness and rest the quality claims on perplexity
-and the extrapolation result.
+\paragraph{Auxiliary evaluations are capacity-limited.}
+Beyond perplexity we logged a battery of auxiliary evaluations for every model,
+including the dense baseline: two synthetic multi-hop reasoning tasks (RULER
+variable tracking and LEGO) and a set of cheap probes carried over from the
+training harness (LAMBADA, associative recall, factual cloze, BLiMP, and an
+in-context-learning score). At 60M parameters nearly all of these are at chance or
+at the floor and do not separate the attention patterns. LEGO holds its $50\%$
+chance rate for every model ($0.47$--$0.51$ across all runs); RULER variable
+tracking is near chance at about $11\%$ ($0.10$--$0.13$); associative recall is
+zero for every model; LAMBADA top-1 accuracy is $2$--$5\%$ and factual cloze below
+$2\%$; the in-context-learning score is too variable across runs to interpret. The
+one exception is BLiMP, on which every model scores about $89\%$ (well above its
+$50\%$ chance), but the spread across configurations is under five points and the
+task probes grammatical acceptability rather than long-range spacing, so it does
+not discriminate either. We report the full battery for completeness and rest the
+quality claims on perplexity and the extrapolation result.
 
 \subsection{Robustness to seed}
 \label{sec:seed}
