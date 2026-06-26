@@ -10,7 +10,7 @@ setting that scalar across depth (fixed, per-layer learned, a static linear
 stagger, and a coprime reassignment of the stagger) plus a reach-matched
 power-of-2 control, over 21 trained language models.
 
-The paper is in [`paper/main.pdf`](paper/main.pdf).
+The paper is in [`paper/scaled-fibonacci-attention.pdf`](paper/scaled-fibonacci-attention.pdf).
 
 ## Findings
 
@@ -25,7 +25,7 @@ The paper is in [`paper/main.pdf`](paper/main.pdf).
 
 ```
 code/        training, evaluation, and analysis scripts
-paper/       LaTeX source (main.tex, references.bib) and the compiled PDF
+paper/       LaTeX source (scaled-fibonacci-attention.tex, references.bib) and the compiled PDF
 db/fib.db    SQLite database with all training and evaluation results
 *.json       position-resolved loss (posloss) and length-extrapolation (lenextrap) dumps
 *.ps1        PowerShell helpers to launch (run_all) and watch (watch) the run queue
