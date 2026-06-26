@@ -17,6 +17,10 @@ __pycache__/
 fibonacci-attention-spec.md
 fibonacci-attention-concept.md
 
+# Local arXiv submission scratch (title/abstract copy-paste helpers)
+title-abstract.txt
+title-abstract-symbols.txt
+
 # LaTeX build artifacts (keep .tex, .bib, .pdf)
 paper/*.aux
 paper/*.log
