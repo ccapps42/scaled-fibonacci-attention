@@ -167,8 +167,9 @@ field-by-field config comparison). Total non-embedding parameters are 44.1M
 (60.9M including the tied embedding).
 
 \paragraph{Data and evaluation.}
-Models train on a fixed token corpus and are evaluated on four held-out sets
-(FineWeb-Edu, Wikipedia, TinyStories, and a math set) by token-level perplexity.
+Models train on a fixed token corpus and are evaluated by token-level perplexity
+on four held-out sets: FineWeb-Edu, Wikipedia, TinyStories, and a math set held
+out from OpenMathInstruct-2 (problem--solution pairs).
 We additionally report two synthetic multi-hop reasoning tasks (RULER variable
 tracking \citep{hsieh2024ruler} and LEGO \citep{zhang2022lego}) and an
 analytic FLOPs/throughput breakdown. The sparse models add only the $\theta$
