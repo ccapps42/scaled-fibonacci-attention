@@ -28,6 +28,7 @@ code/        training, evaluation, and analysis scripts
 paper/       LaTeX source (main.tex, references.bib) and the compiled PDF
 db/fib.db    SQLite database with all training and evaluation results
 *.json       position-resolved loss (posloss) and length-extrapolation (lenextrap) dumps
+*.ps1        PowerShell helpers to launch (run_all) and watch (watch) the run queue
 ```
 
 `code/` includes the shared training stack (`baseline.py`, `train.py`, `db.py`,
@@ -50,8 +51,12 @@ python code/lenextrap.py                     # length-extrapolation sweep
 
 ### Not included (external artifacts)
 
-Two inputs are large and live outside the repo:
+Large artifacts live outside the repo:
 
+- **Trained checkpoints** (`experiments/`, ~41 GB) are gitignored. `run.py` writes
+  them there during training; `posloss.py`, `lenextrap.py`, and `eval_posthoc.py`
+  read them, so those evaluations need either a training run first or your own
+  checkpoints.
 - **Training and validation data** (`*.bin` token files). Set the data path at the
   top of `run.py` / `posloss.py` / `lenextrap.py` to your tokenized corpus.
 - **Dense comparator checkpoints** (`e0000` and friends), used only by the
@@ -60,4 +65,4 @@ Two inputs are large and live outside the repo:
   `novelty` module; the Fibonacci runs do not use that branch.
 
 The committed `db/fib.db` and the JSON dumps already contain the reported results,
-so the tables and figures can be reproduced from this repo without re-running.
+so the paper's tables can be reproduced from this repo without re-running anything.
